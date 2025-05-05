@@ -11,10 +11,12 @@
         "scriptName": "spfconfigmenu",
         "function": "OpenListMenuSelection"
       }
-    },{
+    },
+    {
       "id": "iModifierHotkey:Main",
       "desc": "$Open Selection List Menu"
-    },{
+    },
+    {
       "id": "advAnim",
       "desc": "$Advance Animation",
       "action": {
