@@ -1,9 +1,10 @@
 Scriptname spfconfigmenu extends Quest
 
+import b612
+
 Actor Property PlayerRef Auto
 SexLabFramework Property SexLab auto
 sslSystemConfig Property Config auto
-import b612
 int lastUsed = -1
 float _updateTimer = 0.5
 string currentTarget = ""
@@ -17,57 +18,15 @@ event OnInit()
 	Maintenance()
 EndEvent
 
-Event advanceAnim()
-	sslThreadController _thread =  Sexlab.GetPlayerController()
-	if _thread
-		_thread.AdvanceStage(Input.IsKeyPressed( GetModSettingInt("spf_slso","iModifierHotkey:Main") ))
-	endif
-EndEvent
-;
-;Event OnKeyDown(Int KeyCode)
-;	int i = 0
-;	sslThreadController _thread =  Sexlab.GetPlayerController()
-;	_thread.ResetScene(_thread.GetActiveScene())
-;	;while i < 9
-;	;	_thread.AdvanceStage(true)
-;	;	i+= 1
-;	;endwhile
-;EndEvent
 
 Function PlayerStart(Form FormRef, int tid)
 	playerIsAllowedToOrgasm = true
 	_updateTimer = GetModSettingFloat("spf_slso","fUpdateInterval:Main")
 	MagickaCost = GetModSettingInt("spf_slso","fMagickaCost:Main") as int
-;	if GetModSettingBool("spf_slso","bGoBack:Main")
-;		RegisterForKey(57)
-;	endif
 	lastTarget = ""
 
 endFunction
 
-;Event PlayerAnimChange(int aiThreadID, bool abHasPlayer)
-;	if abHasPlayer
-;		sslThreadController _thread =  Sexlab.GetPlayerController()
-;		string[] text_arr =  SexLabRegistry.GetSTageTags(_thread.getactivescene(), _thread.GetActiveStage())
-;		string text_out = ""
-;		int i = text_arr.length
-;		while i > 0
-;			i -= 1
-;			if text_arr[i] == "Anal" || text_arr[i] == "Vaginal" || text_arr[i] == "Oral"
-;					text_out += text_arr[i] +" "
-;			endif
-;		endwhile
-;		if text_out == ""
-;			text_out = "N/A"
-;		endif
-;		int StageCount = SexLabRegistry.GetPathMax(   _thread.getactivescene()  , "").Length
-;		int Stage_in = StageCount   - SexLabRegistry.GetPathMax(_thread.getactivescene() ,_thread.GetActiveStage()).Length + 1
-;		String add_text = " " + Stage_in  + "/" + StageCount + " "
-;
-;		Debug.Notification(add_text + text_out)
-;		lastTarget = text_out
-;	endif
-;EndEvent
 
 Function PlayerEnd(Form FormRef, int tid)
 	UnRegisterForKey(57)
@@ -114,7 +73,6 @@ endFunction
 Function Maintenance()
 	RegisterForModEvent("PlayerTrack_Start", "PlayerStart")
 	RegisterForModEvent("PlayerTrack_End", "PlayerEnd")
-	;RegisterForModEvent("HookStageStart", "PlayerAnimChange")
 EndFunction
 
 Function OpenListMenuSelection()
