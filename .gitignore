@@ -1,3 +1,6 @@
 .vscode/*
 source/scripts/temp/
 *.txt
+papyrus-compiler/
+*.py
+.papyrus/
