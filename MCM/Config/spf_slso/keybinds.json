@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Exit-9B/MCM-Helper/main/docs/keybinds.schema.json",
+  "modName": "spf_slso",
+  "keybinds": [
+    {
+      "id": "actionChangeAnim",
+      "desc": "$Open Selection List Menu",
+      "action": {
+        "type": "CallFunction",
+        "form": "spf_slso.esp|001",
+        "scriptName": "spfconfigmenu",
+        "function": "OpenListMenuSelection"
+      }
+    },{
+      "id": "iModifierHotkey:Main",
+      "desc": "$Open Selection List Menu"
+    },{
+      "id": "advAnim",
+      "desc": "$Advance Animation",
+      "action": {
+        "type": "CallFunction",
+        "form": "spf_slso.esp|001",
+        "scriptName": "spfconfigmenu",
+        "function": "advanceAnim"
+      }
+    }
+  ]
+}

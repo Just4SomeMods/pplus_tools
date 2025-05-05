@@ -1,0 +1,1 @@
+Scriptname spfslsoscript extends MCM_ConfigBase

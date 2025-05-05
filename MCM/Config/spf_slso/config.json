@@ -1,0 +1,83 @@
+ 
+{
+  "$schema": "https://raw.githubusercontent.com/Exit-9B/MCM-Helper/main/docs/config.schema.json",
+  "modName": "spf_slso",
+  "displayName": "PPlus Tools",
+  "minMcmVersion": 13,
+  "pluginRequirements": [],
+  "cursorFillMode": "topToBottom",
+  "content": [
+    {
+      "text": "Placeholder Text!",
+      "type": "header"
+    },
+    {
+      "text": "Placeholder Text!",
+      "type": "text"
+    }
+  ],
+  "pages": [
+      {
+        "pageDisplayName": "TODO",
+        "content": [ {
+          "id": "iModifierHotkey:Main",
+          "text": "Modify Hotkey",
+          "type": "keymap",
+          "help": "Opens the last menu when pressed with the other Hotkey.",
+          "ignoreConflicts": true,
+                "valueOptions": {
+                  "sourceType": "ModSettingInt"
+                }
+        },
+          {
+            "id": "actionChangeAnim",
+            "text": "Menu Open",
+            "type": "keymap",
+            "help": "Displays Menu",
+            "ignoreConflicts": false
+          },
+          {
+            "id": "advAnim",
+            "text": "Advance Animation  NON FUNCTIONAL",
+            "type": "keymap",
+            "help": "As of 2.13.3 advance Animation in PPlus is broken, if its fixed I'll remove this function again.",
+            "ignoreConflicts": true
+          },
+              {
+                "id": "fUpdateInterval:Main",
+                "text": "Update Interval",
+                "type": "slider",
+                "help": "Time between update checks.",
+                "valueOptions": {
+                  "min": 0.05,
+                  "max": 2,
+                  "step": 0.05,
+                  "sourceType": "ModSettingFloat",
+                  "formatString": "{2}"
+                }
+              },
+              {
+                "id": "fMagickaCost:Main",
+                "text": "Magicka Cost",
+                "type": "slider",
+                "help": "The amount of Magicka you lose per second of edging while you are above 90% Enjoyment",
+                "valueOptions": {
+                  "min": 0,
+                  "max": 100,
+                  "step": 1,
+                  "sourceType": "ModSettingFloat"
+                }
+              },{
+                "id": "bGoBack:Main",
+                "type": "toggle",
+                "text": "SpaceGoesBack NON FUNCTIONAL",
+                "help": "Pressing Spacebar brings you to the beggining of the scene.",
+                "valueOptions": {
+                  "sourceType": "ModSettingBool",
+                            "defaultValue": true
+                }
+                }
+        ]
+      }
+    ]
+  }
